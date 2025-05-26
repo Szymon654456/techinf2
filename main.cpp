@@ -1,81 +1,89 @@
 #include <iostream>
-#include <iostream>
-#include "list.h"
+#include <stdio.h>
+#include "Stack.h"
 
-void clear(void) {
-    while (getchar() != '\n');
+void menu(void)
+{
+    printf("\n");
+    printf("1 - poloz liczbe na stosie (Push)\n");
+    printf("2 - odczytaj wartosc ze szczytu stosu (Top)\n");
+    printf("3 - zdejmij liczbe ze stosu (Pop)\n");
+    printf("4 - sprawdz czy stos jest pusty\n");
+    printf("5 - sprawdz czy stos jest pelny\n");
+    printf("6 - koniec programu\n");
+    printf("\n");
 }
 
-void menu(void) {
-    printf("STACK using singly linked list (LIFO)\n");
-    printf("1. Push (add element to top)\n");
-    printf("2. Pop (remove top element)\n");
-    printf("3. Top (peek top element)\n");
-    printf("4. Is Empty?\n");
-    printf("5. Print stack\n");
-    printf("0. Exit\n\n");
-}
-
-int main() {
-    int value = 0, option = 0, errorCode = 0;
-
-    while (1) {
+int main()
+{
+    int temp = 0;
+    int option = 0;
+    printf("STOS - implementacja w tablicy statycznej\n");
+    while (1)
+    {
         menu();
-        while (!scanf("%d", &option)) {
-            printf("Not an integer! Input an integer: ");
-            clear();
-        }
+        scanf("%d", &option);
 
-        switch (option) {
-            case 1: // Push
-                //system("cls");
-                printf("Input a number to push: ");
-                while (!scanf("%d", &value)) {
-                    printf("Not an integer! Input an integer: ");
-                    clear();
+
+        switch (option)
+        {
+            case 1:
+                if ( !isStackFull() ){
+                    printf("Podaj wartosc: ");
+                    scanf("%d", &temp);
+                    Push(temp);
                 }
-                errorCode = push(value);
-                !errorCode ? printf("Pushed successfully!\n\n") : printf("Push failed.\n\n");
+                else {
+                    printf("operacja niedozwolona STOS pelny!!!\n\n");
+                }
+
                 break;
 
-            case 2: // Pop
-                //system("cls");
-                if (!isEmpty()) {
-                    errorCode = pop(&value);
-                    !errorCode ? printf("Popped value: %d\n\n", value) : printf("Pop failed.\n\n");
-                } else {
-                    printf("Stack is empty.\n\n");
+            case 2:
+                if (!isStackEmpty()) {
+                    temp = Top();
+                    printf("Odczytana wartosc: %d", temp);
+                }
+                else {
+                    printf("operacja niedozwolona STOS pusty!!!\n\n");
+                }
+
+                break;
+
+            case 3:
+                if (!isStackEmpty()) {
+                    temp = Pop();
+                    printf("Odczytana wartosc: %d", temp);
+                }
+                else {
+                    printf("operacja niedozwolona STOS pusty!!!\n\n");
                 }
                 break;
 
-            case 3: // Top
-                //system("cls");
-                if (!isEmpty()) {
-                    if (top(&value) == EXIT_SUCCESS)
-                        printf("Top of stack: %d\n\n", value);
-                } else {
-                    printf("Stack is empty.\n\n");
+            case 4:
+                if (isStackEmpty()) {
+                    printf("STOS jest pusty.\n");
+                }
+                else {
+                    printf("STOS nie jest pusty.\n");
                 }
                 break;
 
-            case 4: // isEmpty
-                //system("cls");
-                printf(isEmpty() ? "Stack is empty.\n\n" : "Stack is NOT empty.\n\n");
+            case 5:
+                if (isStackFull()) {
+                    printf("STOS jest pelny.\n");
+                }
+                else {
+                    printf("STOS nie jest pelny.\n");
+                }
                 break;
 
-            case 5: // Print stack
-                //system("cls");
-                printf("Stack (top to bottom): ");
-                printList();
-                printf("\n%d elements\n\n", getNodesCount());
-                break;
-
-            case 0: // Exit
+            case 6:
+                //zakonczenie programu
                 return 0;
 
             default:
-                //system("cls");
-                printf("Choose a valid option.\n\n");
+                printf("Wybierz wlasciwa opcje.\n\n");
                 break;
         }
     }
