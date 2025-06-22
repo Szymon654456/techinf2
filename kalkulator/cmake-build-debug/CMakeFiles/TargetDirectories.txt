@@ -1,0 +1,3 @@
+C:/Users/Szymon/Desktop/ti/kalkulator/cmake-build-debug/CMakeFiles/kalkulator.dir
+C:/Users/Szymon/Desktop/ti/kalkulator/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Szymon/Desktop/ti/kalkulator/cmake-build-debug/CMakeFiles/rebuild_cache.dir
