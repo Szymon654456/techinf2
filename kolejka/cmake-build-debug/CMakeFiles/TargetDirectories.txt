@@ -1,0 +1,3 @@
+C:/Users/Szymon/Desktop/ti/kolejka/cmake-build-debug/CMakeFiles/kolejka.dir
+C:/Users/Szymon/Desktop/ti/kolejka/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Szymon/Desktop/ti/kolejka/cmake-build-debug/CMakeFiles/rebuild_cache.dir
