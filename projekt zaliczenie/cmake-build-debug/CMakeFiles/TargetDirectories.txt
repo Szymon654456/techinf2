@@ -1,0 +1,3 @@
+C:/Users/Szymon/Desktop/ti/projekt zaliczenie/cmake-build-debug/CMakeFiles/projekt_zaliczenie.dir
+C:/Users/Szymon/Desktop/ti/projekt zaliczenie/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Szymon/Desktop/ti/projekt zaliczenie/cmake-build-debug/CMakeFiles/rebuild_cache.dir
