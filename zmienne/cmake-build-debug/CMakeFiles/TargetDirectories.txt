@@ -1,0 +1,3 @@
+C:/Users/Szymon/Desktop/ti/zmienne/cmake-build-debug/CMakeFiles/zmienne.dir
+C:/Users/Szymon/Desktop/ti/zmienne/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Szymon/Desktop/ti/zmienne/cmake-build-debug/CMakeFiles/rebuild_cache.dir
